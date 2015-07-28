@@ -4,20 +4,17 @@ module MiniFixtures
 
     included do
       class << self
-        alias_method :original_fixture_is_cached?, :fixture_is_cached?
+        alias_method_chain :fixture_is_cached?, :ignoring_mini_fixtures
       end
     end
 
-    module ClassMethods
-      @@mini_fixtures_dirnames = []
+    class_methods do
+      def fixture_is_cached_with_ignoring_mini_fixtures?(connection, table_name)
+        fixture_dirnames = MiniFixtures.mini_fixture_dirnames
 
-      def mini_fixtures_dirnames
-        @@mini_fixtures_dirnames
-      end
-
-      def fixture_is_cached?(connection, table_name)
-        return false if mini_fixtures_dirnames.include?(table_name)
-        original_fixture_is_cached(connection, table_name)
+        unless fixture_dirnames.find { |dir| table_name.to_s =~ /^#{dir}/ }
+          fixture_is_cached_without_ignoring_mini_fixtures?(connection, table_name)
+        end
       end
     end
   end

@@ -2,7 +2,7 @@ module MiniFixtures
   module MiniFixturesMethod
     extend ActiveSupport::Concern
 
-    module ClassMethods
+    class_methods do
       def mini_fixtures(fixture_set_dirname, *fixture_set_names)
         fixture_set_path = Pathname(fixture_path).join(fixture_set_dirname.to_s)
 
@@ -26,19 +26,23 @@ module MiniFixtures
           paths << path
         end
 
-        set_fixture_class classes
-        fixtures paths
+        set_fixture_class(classes)
+        fixtures(paths)
 
-        register_mini_fixtures_dirname(fixture_set_dirname)
+        register_mini_fixture_dirname(fixture_set_dirname.to_s)
       end
 
       private
 
-      def register_mini_fixtures_dirname(dirname)
-        return if ActiveRecord::FixtureSet.mini_fixtures_dirnames.include?(dirname)
-        ActiveRecord::FixtureSet.mini_fixtures_dirnames << dirname
+      def register_mini_fixture_dirname(dirname)
+        return if MiniFixtures.mini_fixture_dirnames.include?(dirname)
+        MiniFixtures.mini_fixture_dirnames << dirname
       end
     end
+  end
+
+  def self.mini_fixture_dirnames
+    @mini_fixture_dirnames ||= []
   end
 end
 

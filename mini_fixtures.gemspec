@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ['Katsuya HIDAKA']
   s.email       = ['hidakatsuya@gmail.com']
   s.homepage    = 'https://github.com/hidakatsuya/mini_fixtures'
-  s.summary     = 'Separatable fixtures for Ruby on Rails'
-  s.description = 'Separatable fixtures for Ruby on Rails'
+  s.summary     = 'Separatable fixtures for Rails'
+  s.description = s.summary
   s.license     = 'MIT'
 
   s.platform              = Gem::Platform::RUBY
@@ -20,6 +20,6 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
 
   s.add_dependency 'activerecord', '~> 4.2'
-  s.add_development_dependency 'activesupport', '~> 4.2'
-  s.add_development_dependency 'sqlite3'
+  s.add_dependency 'activesupport', '~> 4.2'
+  s.add_development_dependency 'sqlite3', '>= 1.3'
 end

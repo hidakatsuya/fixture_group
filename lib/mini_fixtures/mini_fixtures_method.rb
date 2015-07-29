@@ -31,11 +31,22 @@ module MiniFixtures
 
         set_fixture_class(classes)
         fixtures(paths)
+        setup_mini_fixture_accessors(paths, fixture_set_names)
 
         register_mini_fixture_dirname(fixture_set_dirname.to_s)
       end
 
       private
+
+      def setup_mini_fixture_accessors(paths, fixture_set_names)
+        current_accessor_names = paths.map { |path| path.tr('/', '_').to_sym }
+        new_accessor_names = fixture_set_names.map(&:to_sym)
+
+        alias_accessor_names = Hash[current_accessor_names.zip(new_accessor_names)]
+        alias_accessor_names.each do |current_name, new_name|
+          alias_method new_name, current_name
+        end
+      end
 
       def register_mini_fixture_dirname(dirname)
         return if MiniFixtures.mini_fixture_dirnames.include?(dirname)

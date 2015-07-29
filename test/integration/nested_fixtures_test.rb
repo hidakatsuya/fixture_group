@@ -7,8 +7,8 @@ class NestedFixturesTest < ActiveSupport::TestCase
     assert_equal 1, Item.count
     assert_equal 1, Category.count
 
-    item = Item.first
-    assert_equal 'Item for CaseB-Sub', item.name
-    assert_equal 'Category for CaseB-Sub', item.category.name
+    assert_equal 'Item for CaseB-Sub', items(:case_b_subcase_item).name
+    assert_equal 'Category for CaseB-Sub', items(:case_b_subcase_item).category.name
+    assert_equal 'Category for CaseB-Sub', categories(:case_b_subcase_category).name
   end
 end

@@ -1,7 +1,7 @@
 require_relative 'integration_helper'
 
 class CompositeFixturesTest < ActiveSupport::TestCase
-  mini_fixtures 'common', :all, cache: true
+  mini_fixtures 'common', :all
   mini_fixtures 'for_case_a', :all
 
   test 'load fixtures properly' do
@@ -9,10 +9,8 @@ class CompositeFixturesTest < ActiveSupport::TestCase
     assert_equal 1, Item.count
     assert_equal 1, Category.count
 
-    assert_equal 'user_a', User.first.login
-
-    item = Item.first
-    assert_equal 'Item for CaseA', item.name
-    assert_equal 'Category for CaseA', item.category.name
+    assert_equal 'user_a', users(:user_a).login
+    assert_equal 'Item for CaseA', items(:case_a_item).name
+    assert_equal 'Category for CaseA', items(:case_a_item).category.name
   end
 end

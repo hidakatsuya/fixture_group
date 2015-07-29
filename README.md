@@ -55,6 +55,17 @@ Then bundle:
 
 Please see `*_test.rb` in  [test/integration](https://github.com/hidakatsuya/mini_fixtures/tree/master/test/integration).
 
+### DON'T DO THIS
+
+```ruby
+class FooTest < ActiveSupport::TestCase
+  mini_fixtures 'case_a', :users
+  mini_fixtures 'case_b', :users
+end
+```
+
+In this code, `case_b/users.yml` will be loaded, but `case_a/users.yml` will be **ignored**.
+
 ## Contributing
 
   1. Fork it

@@ -1,11 +1,15 @@
-require 'test_helper'
+require_relative 'integration_helper'
 
-class AllFixturesTest < ActiveSupport::TestCase
+class CompositeFixturesTest < ActiveSupport::TestCase
+  mini_fixtures 'common', :all, cache: true
   mini_fixtures 'for_case_a', :all
 
   test 'load fixtures properly' do
+    assert_equal 1, User.count
     assert_equal 1, Item.count
     assert_equal 1, Category.count
+
+    assert_equal 'user_a', User.first.login
 
     item = Item.first
     assert_equal 'Item for CaseA', item.name

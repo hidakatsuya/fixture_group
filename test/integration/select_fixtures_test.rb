@@ -1,4 +1,4 @@
-require 'test_helper'
+require_relative 'integration_helper'
 
 class SelectFixturesTest < ActiveSupport::TestCase
   mini_fixtures 'for_case_a', :categories, :items

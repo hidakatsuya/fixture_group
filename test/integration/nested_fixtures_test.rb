@@ -1,4 +1,4 @@
-require 'test_helper'
+require_relative 'integration_helper'
 
 class NestedFixturesTest < ActiveSupport::TestCase
   mini_fixtures 'for_case_b/subcase', :all

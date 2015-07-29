@@ -66,6 +66,10 @@ end
 
 In this code, `case_b/users.yml` will be loaded, but `case_a/users.yml` will be **ignored**.
 
+## Questions, Feedback
+
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/hidakatsuya/mini_fixtures?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge), or feel free to message me on GitHub or Twitter (@hidakatsuya)
+
 ## Contributing
 
   1. Fork it

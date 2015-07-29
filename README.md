@@ -1,6 +1,8 @@
 # Mini Fixtures
 
+[![Gem Version](https://badge.fury.io/rb/mini_fixtures.svg)](http://badge.fury.io/rb/mini_fixtures)
 [![Build Status](https://travis-ci.org/hidakatsuya/mini_fixtures.svg?branch=master)](https://travis-ci.org/hidakatsuya/mini_fixtures)
+[![Code Climate](https://codeclimate.com/github/hidakatsuya/mini_fixtures/badges/gpa.svg)](https://codeclimate.com/github/hidakatsuya/mini_fixtures)
 
 An extension of the ActiveRecord Fixtures that provides a feature to separate it to small sets.
 

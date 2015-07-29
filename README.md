@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/hidakatsuya/mini_fixtures.svg?branch=master)](https://travis-ci.org/hidakatsuya/mini_fixtures)
 
-An extension of the ActiveRecord Fixtures that provides a feature to separate it.
+An extension of the ActiveRecord Fixtures that provides a feature to separate it to small sets.
 
 ## Features
 

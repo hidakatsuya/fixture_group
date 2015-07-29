@@ -8,9 +8,10 @@ Gem::Specification.new do |s|
   s.authors     = ['Katsuya HIDAKA']
   s.email       = ['hidakatsuya@gmail.com']
   s.homepage    = 'https://github.com/hidakatsuya/mini_fixtures'
-  s.summary     = 'An extension of the ActiveRecord Fixtures that provides a feature to separate it'
+  s.summary     = 'An extension of the ActiveRecord Fixtures ' \
+                  'that provides a feature to separate it to small sets'
   s.description = 'Mini-Fixtures is an extension of the ActiveRecord Fixtures ' \
-                  'that provides a feature to separate it'
+                  'that provides a feature to separate it to small sets'
   s.license     = 'MIT'
   s.platform    = Gem::Platform::RUBY
   s.required_ruby_version = '>= 2.0'

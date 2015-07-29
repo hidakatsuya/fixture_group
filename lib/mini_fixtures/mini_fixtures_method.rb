@@ -3,6 +3,9 @@ module MiniFixtures
     extend ActiveSupport::Concern
 
     class_methods do
+      # @param [String, Symbol] fixture_set_dirname
+      # @param [Array<String, Symbol>] fixture_set_names
+      # @example See `*_test.rb` in https://github.com/hidakatsuya/mini_fixtures/tree/master/test/integration
       def mini_fixtures(fixture_set_dirname, *fixture_set_names)
         fixture_set_path = Pathname(fixture_path).join(fixture_set_dirname.to_s)
 
@@ -41,6 +44,7 @@ module MiniFixtures
     end
   end
 
+  # @private
   def self.mini_fixture_dirnames
     @mini_fixture_dirnames ||= []
   end

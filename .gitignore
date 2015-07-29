@@ -1,4 +1,4 @@
 Gemfile.lock
+*.sqlite3
 .bundle/
 pkg/
-test/db/*.sqlite3

@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/hidakatsuya/fixture_group.svg?branch=master)](https://travis-ci.org/hidakatsuya/fixture_group)
 [![Code Climate](https://codeclimate.com/github/hidakatsuya/fixture_group/badges/gpa.svg)](https://codeclimate.com/github/hidakatsuya/fixture_group)
 
-An extension of the ActiveRecord Fixtures that provides a feature to separate it to small sets.
+An extension of the ActiveRecord Fixtures that make possible to create fixtures group.
 
 ## Features
 

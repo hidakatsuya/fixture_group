@@ -1,17 +1,17 @@
 $:.push File.expand_path('../lib', __FILE__)
 
-require 'mini_fixtures/version'
+require 'fixture_group/version'
 
 Gem::Specification.new do |s|
-  s.name        = 'mini_fixtures'
-  s.version     = MiniFixtures::VERSION
+  s.name        = 'fixture_group'
+  s.version     = FixtureGroup::VERSION
   s.authors     = ['Katsuya HIDAKA']
   s.email       = ['hidakatsuya@gmail.com']
-  s.homepage    = 'https://github.com/hidakatsuya/mini_fixtures'
+  s.homepage    = 'https://github.com/hidakatsuya/fixture_group'
   s.summary     = 'An extension of the ActiveRecord Fixtures ' \
-                  'that provides a feature to separate it to small sets'
-  s.description = 'Mini-Fixtures is an extension of the ActiveRecord Fixtures ' \
-                  'that provides a feature to separate it to small sets'
+                  'that make possible to create fixtures group'
+  s.description = 'FixtureGroup is an extension of the ActiveRecord Fixtures ' \
+                  'that make possible to create fixtures group'
   s.license     = 'MIT'
   s.platform    = Gem::Platform::RUBY
   s.required_ruby_version = '>= 2.0'

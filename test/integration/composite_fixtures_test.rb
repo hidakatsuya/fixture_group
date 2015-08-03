@@ -1,8 +1,8 @@
 require_relative 'integration_helper'
 
 class CompositeFixturesTest < ActiveSupport::TestCase
-  mini_fixtures 'common', :all
-  mini_fixtures 'for_case_a', :all
+  fixture_group 'common', :all
+  fixture_group 'for_case_a', :all
 
   test 'load fixtures properly' do
     assert_equal 1, User.count

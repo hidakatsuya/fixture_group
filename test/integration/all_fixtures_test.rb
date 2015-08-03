@@ -1,7 +1,7 @@
 require_relative 'integration_helper'
 
 class AllFixturesTest < ActiveSupport::TestCase
-  mini_fixtures 'for_case_a', :all
+  fixture_group 'for_case_a', :all
 
   test 'load fixtures properly' do
     assert_equal 1, Item.count

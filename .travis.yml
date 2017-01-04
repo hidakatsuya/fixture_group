@@ -3,12 +3,15 @@ language: ruby
 sudo: false
 
 rvm:
-  - 2.0
-  - 2.1
-  - 2.2
+  - 2.3.3
+  - 2.4.0
 
 gemfile:
-  - test/gemfiles/Gemfile-AR4.1
   - test/gemfiles/Gemfile-AR4.2
+  - test/gemfiles/Gemfile-AR5.0
+
+matrix:
+  allow_failures:
+    - rvm: 2.4.0
 
 script: rake test

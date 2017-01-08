@@ -40,8 +40,8 @@ end
 
 ## Supported versions
 
-  * Ruby 2.0, 2.1, 2,2
-  * ActiveRecord 4.1, 4.2
+  * Ruby 2.3 + ActiveRecord 4.2, 5.0
+  * Ruby 2.4 + ActiveRecord 5.0
 
 ## Install
 
